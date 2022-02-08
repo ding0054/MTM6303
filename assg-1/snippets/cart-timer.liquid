@@ -1,0 +1,20 @@
+<div id="jstimer">
+  <h5>Time remaining:</h5>
+	<div id="clockdiv">
+	  <span>
+		<span class="minutes"></span>
+		<span class="smalltext">Minutes</span>
+	  </span>
+	  <span>
+		<span class="seconds"></span>
+		<span class="smalltext">Seconds</span>
+	  </span>
+	</div>
+</div>
+		{{ 'cart-timer.css' | asset_url | stylesheet_tag }}
+  	 	<script src="{{ 'cart-timer.js' | asset_url }}" defer="defer"></script>
+{% comment %}
+  Call your javascript and css here using {{ }} (and outside of the comment, of course)
+  Include the JS file in the snippet liquid file using asset_url  and script_tag filter (https://shopify.dev/api/liquid/filters/url-filters#asset_url) 
+  Include the CSS file in the snippet liquid file using using asset_url  and stylesheet_tag  filter (https://shopify.dev/api/liquid/filters/url-filters#asset_url) 
+{% endcomment %}

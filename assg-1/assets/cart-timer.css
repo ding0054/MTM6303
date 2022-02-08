@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+h5{
+	color: #264d00;
+  	font-size:22px;
+	font-family: 'Lato', sans-serif;
+    margin-top:1em;
+}
+
+div #clockdiv{
+
+  	background-color: #264d00;
+  	color: #FFFFFF;
+  	font-size:22px;
+	font-family: 'Lato', sans-serif;
+    padding:10px;
+    display: inline;
+
+}
