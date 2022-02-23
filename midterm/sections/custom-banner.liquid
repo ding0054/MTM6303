@@ -1,0 +1,61 @@
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{section.settings.custom_text_title}}</strong>
+     {{section.settings.custom_text_body}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <a href="https://allaboutdnt.com/" class="btn btn-primary">{{section.settings.btn_text}}</a>
+</div>
+<style>
+.alert {
+        background : {{ section.settings.background-color }};
+          color:{{ section.settings.font-color }};
+ 
+</style>  
+
+{% schema %}
+{
+    "name": "Custom Banner",
+    "tag": "section",
+    "class": "index-section--flush",
+    "settings": [{
+            "id": "custom_text_title",
+            "type": "text",
+            "label": "Banner Title",
+            "default": "Banner Title"
+        },
+        {
+            "id": "custom_text_body",
+            "type": "richtext",
+            "label": "Banner Text",
+            "default": "<p>Add your text here</p>"
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#fff3cd"
+        },
+        {
+            "type": "color",
+            "id": "font-color",
+            "label": "Font Color",
+            "default": "#664d03"
+        },
+		{
+            "id": "btn_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Decline"
+        }
+	
+    ],
+    "presets": [{
+        "name": "Custom Banner",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

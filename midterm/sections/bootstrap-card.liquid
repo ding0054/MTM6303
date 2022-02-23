@@ -1,0 +1,82 @@
+
+
+{%- assign blocks = section.blocks | sort: 'bostrap-card.card' -%}
+{% for block in section.blocks %}
+  {% if block.type == 'select' %}
+    <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ section.settings.card_image | image_url: width: 500 }}" alt="{{section.settings.card_image.alt}}">
+  <div class="card-body">
+    <strong>{{section.settings.card_title}}</strong>
+    {{section.settings.card_text_body}}
+      <a href="{{section.settings.button_link}}" class="btn btn-primary">{{section.settings.btn_text}}</a>
+  </div>
+</div>
+  {% elsif block.type == 'headline' %}
+  {% endif %}
+  <!-- output a header with text -->
+{% endfor %}
+
+<style>
+  .card .btn {
+    background-color : {{ section.settings.btn-color}} 
+  }
+</style>  
+{% schema %}
+
+{
+    "name": "Bootstrap Card",
+    "tag": "section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+		{
+            "id": "card_title",
+            "type": "text",
+            "label": "Card Title",
+            "default": "Card Title"
+        },
+		{
+            "id": "card_text_body",
+            "type": "richtext",
+            "label": "Card Text",
+            "default": "<p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>"
+        },
+		
+       
+        {
+            "type": "color",
+            "id": "btn-color",
+            "label": "Button Color",
+            "default": "#3b4d28"
+        },
+
+			{
+            "id": "btn_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Go Some Where"
+        },
+		
+
+		 {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+    ],
+
+    "presets": [{
+        "name": "Bootstrap Card",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
